@@ -1,26 +1,27 @@
 import React from "react";
-import { Button, View } from "react-native";
-import { atom, RecoilRoot, useRecoilState } from "recoil";
+import { View, Image, Text } from "react-native";
+import { RecoilRoot } from "recoil";
 import tw from "twrnc";
-
-const testAtom = atom<"native" | "bright">({
-  key: "testAtom",
-  default: "native",
-});
+import { THEME } from "./theme";
 
 function Root() {
-  const [future, setFuture] = useRecoilState(testAtom);
   return (
     <View
-      style={tw`h-full ${
-        future === "bright" ? "bg-yellow-100" : "bg-blue-100"
-      } flex justify-center items-center`}
+      style={tw`h-full flex justify-center items-center bg-[${THEME.colors.background}]`}
     >
-      <Button
-        title={`The Future is ${future}`}
-        color={future === "bright" ? "rgb(228, 208, 10)" : "rgb(33, 150, 243)"}
-        onPress={() => setFuture(future === "bright" ? "native" : "bright")}
-      />
+      <View
+        style={tw`flex justify-center items-center w-1/2 p-8 bg-[${THEME.colors.cardBackground}] rounded-[${THEME.borderRadius.radius}] border border-[${THEME.colors.cardBorder}]`}
+      >
+        <Image
+          style={tw`h-32 w-32 p-8`}
+          // source={require("./lulo.png")}
+        />
+        <Text
+          style={tw`text-white`}
+        >
+          Coming soon
+        </Text>
+      </View>
     </View>
   );
 }
