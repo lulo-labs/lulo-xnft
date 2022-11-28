@@ -13,11 +13,12 @@ function Root() {
         style={tw`flex justify-center items-center w-1/2 p-8 bg-[${THEME.colors.cardBackground}] rounded-[${THEME.borderRadius.radius}] border border-[${THEME.colors.cardBorder}]`}
       >
         <Image
-          style={tw`h-32 w-32 p-8`}
-          // source={require("./lulo.png")}
+          style={tw`w-[131px] h-[33px]`}
+          source={{
+            uri: "https://i.imgur.com/KT2BiJv.png"}}
         />
         <Text
-          style={tw`text-white`}
+          style={tw`text-white mt-4`}
         >
           Coming soon
         </Text>

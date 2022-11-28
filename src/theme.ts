@@ -6,9 +6,5 @@ export const THEME = {
   },
   borderRadius: {
     radius: "2rem",
-  },
-  grid: {
-    display: "grid",
-    placeItems: "center",
-  },
+  }
 };
